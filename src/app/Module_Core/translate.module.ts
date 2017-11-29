@@ -4,9 +4,9 @@ import { TranslateModule, TranslateLoader, TranslateService, TranslatePipe } fro
 // import { TranslatePipe } from '@ngx-translate/core/src/translate.pipe';
 // import { TranslateStore } from '@ngx-translate/core/src/translate.store';
 import { Observable } from 'rxjs/Observable';
-import { AngularFireService } from './services/firebase.service';
 import { Config } from './config.core';
 import { LocalJsonTransLoaderFactory, FbTransLoaderFactory, HttpLoaderFactory } from './translation';
+import { AngularFireService } from './firebase/firebase.service';
 
 
 @NgModule({

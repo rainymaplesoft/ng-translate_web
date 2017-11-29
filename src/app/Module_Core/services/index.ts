@@ -1,4 +1,3 @@
-export * from './firebase.service';
 export * from './http.service';
 export * from './jwtAuth.service';
 export * from './layout.Service';

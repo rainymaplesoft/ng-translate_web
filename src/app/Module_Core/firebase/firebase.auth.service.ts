@@ -12,11 +12,11 @@ export class FireAuthService {
         this.user$ = this.afAuth.authState;
     }
 
-    login(routeOk: string, routeFaile = '/') {
+    login(routeOk: string, routeFailed = '/') {
         this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
             .then(
             d => this.router.navigate([routeOk]),
-            e => this.router.navigate([routeFaile])
+            e => this.router.navigate([routeFailed])
             ).catch(error => console.log('auth error', error));
     }
 

@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
+import * as firebase from 'firebase/app'; // typings only
 import { Observable } from 'rxjs/Observable';
 import { first } from 'rxjs/Operator/first';
 import { IKeyValue } from '../enums';
@@ -44,6 +45,18 @@ export class AngularFireService implements INoSqlService {
         const path = this.getPath(params);
         const dbObject = this.db.object(path);
         return dbObject.remove().catch((error) => this.handleErrors(error, path));
+    }
+
+    public uploadFile(event: any, key: string, callback?: any) {
+        const fileFolderName = 'pictures';
+        const file = event.srcElement.files[0];
+        const storageRef = firebase.storage().ref(`${fileFolderName}/${key}`);
+        storageRef.put(file).then(uploadTask => {
+            const downloadUrl = uploadTask.downloadURL;
+            if (callback && typeof callback === 'function') {
+                callback(downloadUrl);
+            }
+        });
     }
 
     private getPath(params: string[]) {

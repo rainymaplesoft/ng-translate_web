@@ -18,7 +18,7 @@ export class PendingChangesGuard implements CanDeactivate<ComponentCanDeactivate
                 this.label_Warning = texts[this.label_Warning];
             });
     }
-    canDeactivate(component: ComponentCanDeactivate): boolean | Observable<boolean> {
+    canDeactivate(component: ComponentCanDeactivate): Observable<boolean> | Promise<boolean> | boolean {
         // if there are no pending changes, just allow deactivation; else confirm first
         return component.canDeactivate() ?
             true :
@@ -38,7 +38,7 @@ export class AuthenticateGuard implements CanActivate {
     }
 
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         return Observable.of(true);
         // return this.authService.getUserInfo().map(
         //     (user: IAuthenticatedUser) => {
@@ -66,7 +66,7 @@ export class StaffAuthenticateGuard implements CanActivate {
     }
 
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         return Observable.of(true);
         // return this.authService.getUserInfo().map(
         //     (user: IAuthenticatedUser) => {
@@ -93,7 +93,7 @@ export class SysAdminAuthenticateGuard implements CanActivate {
     }
 
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): any {
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
         return Observable.of(true);
         // return this.authService.getUserInfo().map(
         //     (user: IAuthenticatedUser) => {
