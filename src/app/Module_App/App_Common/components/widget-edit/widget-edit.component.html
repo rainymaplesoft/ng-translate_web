@@ -1,0 +1,48 @@
+<div class="edit_container" [ngClass]="{mobile:isMobile}" [@slideUpDownAnimation]>
+  <div class="edit_section" [ngClass]="{mobile:isMobile}">
+    <div class="header_container" [ngClass]="{mobile:isMobile}">
+      <div class="header">
+        <div class="left">
+          <div class="back">
+            <mat-icon style="font-size:30px" matTooltip='{{"ACTIONBAR.TOOLTIP_BACK"|translate}}'>keyboard_arrow_left</mat-icon>
+          </div>
+          <div class="title">{{title|translate}}</div>
+        </div>
+        <div class="buttons">
+          <!--<button mat-icon-button *ngIf="showAdd" [disabled]='disableAdd' (click)='onAddClick()'>
+          <mat-icon>add</mat-icon>
+        </button>-->
+          <!-- <button mat-raised-button (click)="onRouteBackClick()" color='warn' matTooltip='{{"ACTIONBAR.TOOLTIP_BACK"|translate}}' matTooltipPosition="below"
+            style='min-width:24px;padding:0 5px;'>
+            <mat-icon>keyboard_arrow_left</mat-icon>
+          </button> -->
+          <button mat-raised-button *ngIf="showDelete" color='warn' matTooltip='{{"ACTIONBAR.TOOLTIP_DELETE"|translate}}' matTooltipPosition="below"
+            [disabled]='disableDelete' (click)='onDeleteClick()' style='min-width:24px;padding:0 5px;'>
+            <mat-icon>clear</mat-icon>
+          </button>
+          <button mat-raised-button *ngIf="showSave" color='warn' matTooltip='{{"ACTIONBAR.TOOLTIP_SAVE"|translate}}' matTooltipPosition="below"
+            style='min-width:24px;padding:0 5px;' [disabled]='disableSave' (click)='onSaveClick()'>
+            <mat-icon>check</mat-icon>
+          </button>
+          <!--<button mat-icon-button *ngIf="showRest" [matTooltip]="tooltip_reset|translate" matTooltipPosition="below" [disabled]='true' (click)='onResetClick()'>
+        <mat-icon>undo</mat-icon>
+        </button>-->
+        </div>
+      </div>
+      <div>
+        <mat-progress-bar style="height: 2px;" [attr.color]="color" [mode]="mode" [value]="value" [bufferValue]="bufferValue" *ngIf="isShowProgress">
+        </mat-progress-bar>
+      </div>
+    </div>
+    <div class='form_container' [ngClass]="{mobile:isMobile}">
+      <!--content inserted here-->
+      <ng-content></ng-content>
+    </div>
+    <div class="footer" [ngClass]="{mobile:isMobile}">
+      <!--<button mat-raised-button (click)="onRouteBackClick()">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+        Back
+        </button>-->
+    </div>
+  </div>
+</div>

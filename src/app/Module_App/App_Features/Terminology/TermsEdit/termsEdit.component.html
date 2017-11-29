@@ -1,0 +1,25 @@
+<div class="main-section" [ngClass]='{mobile:isMobile}'>
+  <div class="section assessment-edit" [ngClass]='{mobile:isMobile}'>
+    <div class="flex_row_center">
+      <widget-edit [showSave]="showSave" [title]="title" [disableSave]="disableSave" (clickSave)="onSaveClick($event)" (clickBack)="onRouteBackClick($event)"
+        [isMobile]='isMobile' [isLoading]='isLoading'>
+        <category-filter (termsChange)='onFiltersChanged($event)'></category-filter>
+        <div *ngIf='terms && terms.length' class="terms_edit">
+          <!-- <div class="control"> -->
+          <div *ngFor='let term of terms' class='edit_control'>
+            <div class="label">
+              <label for="{{term.key}}">{{term.key | uppercase}} :</label>
+            </div>
+            <div class="text">
+              <mat-form-field>
+                <textarea matInput name="{{term.key}}" [(ngModel)]='term.value' (ngModelChange)='onTermChange(term.value)' matTextareaAutosize
+                  matAutosizeMaxRows="5"></textarea>
+              </mat-form-field>
+              <!-- <val-msg [message]='__formConfig.assessmentName.message'></val-msg> -->
+            </div>
+          </div>
+        </div>
+      </widget-edit>
+    </div>
+  </div>
+</div>

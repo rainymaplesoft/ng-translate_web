@@ -1,0 +1,56 @@
+<div class="main-section" [ngClass]='{mobile:isMobile}'>
+  <div class="section assessment-edit" [ngClass]='{mobile:isMobile}'>
+    <div class="flex_row_center">
+      <widget-edit [showSave]="showSave" [title]="title" [disableSave]="disableSave" [isMobile]='isMobile' [isLoading]='isLoading'>
+        <div class="card">
+          <div class='card-header'>
+            <div class='card-title'>Add Client</div>
+          </div>
+          <div class='card-content'>
+            <div class="client-edit">
+              <div class="control">
+                <mat-form-field>
+                  <input matInput placeholder="Client Name" [(ngModel)]="newClient" autocomplete="off">
+                </mat-form-field>
+              </div>
+              <div class='select_container'>
+                <mat-form-field style="width:15em;">
+                  <mat-select placeholder="Client Template" [(ngModel)]="clientKey" name="clientselected">
+                    <mat-option *ngFor="let client of clients" [value]="client.key">
+                      {{client.value}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class='card-actions'>
+            <button mat-raised-button color="accent" [disabled]='disableAdd' (click)='addClient()'>Add</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class='card-header'>
+            <div class='card-title'>Remove Client</div>
+          </div>
+          <div class='card-content'>
+            <div class="client-edit">
+              <div class='select_container'>
+                <mat-form-field style="width:15em;">
+                  <mat-select placeholder="Client to Remove" [(ngModel)]="clientKeyRemove" name="clientRemove">
+                    <mat-option *ngFor="let client of clients" [value]="client.key">
+                      {{client.value}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+          <div class='card-actions'>
+            <button mat-raised-button color="accent" [disabled]='disableRemove' (click)='removeClient()'>Remove</button>
+          </div>
+        </div>
+
+      </widget-edit>
+    </div>
+  </div>
+</div>

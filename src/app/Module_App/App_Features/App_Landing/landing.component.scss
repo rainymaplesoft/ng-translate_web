@@ -1,0 +1,67 @@
+:host {
+  display: flex;
+  flex: 1;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.header {
+  position: relative;
+  height: 360px;
+  .header-image {
+    height: 360px;
+    img {
+      height: 360px;
+      width: 100%;
+    }
+  }
+  .greeting {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    color: #676a6c;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 3em;
+    font-weight: 600;
+    color: powderblue;
+    .title_2 {
+      font-size: 20px;
+      font-weight: normal;
+      padding: 1em;
+      color: bisque;
+    }
+  }
+}
+
+.content {
+  font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  flex: 5;
+  font-size: 14px;
+  .features {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.foot {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: cornsilk;
+  flex: 1;
+  .techs {
+    display: flex;
+    flex-wrap: wrap;
+    .tech {
+      padding: 0.5em;
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}

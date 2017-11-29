@@ -1,0 +1,84 @@
+<div class="main-section" [ngClass]='{mobile:isMobile}'>
+  <div class="section assessment-edit" [ngClass]='{mobile:isMobile}'>
+    <div class="flex_row_center">
+      <widget-edit [showSave]="showSave" [title]="title" [disableSave]="disableSave" [isMobile]='isMobile' [isLoading]='isLoading'>
+        <div class="download">
+          <button mat-raised-button color="primary" (click)='download()'>
+            <mat-icon>vertical_align_bottom</mat-icon>Download
+          </button>
+        </div>
+        <div class="card">
+          <div class='card-header'>
+            <div class='card-title'>Add Terminology</div>
+          </div>
+          <div class='card-content'>
+            <div class="client-edit">
+              <div class='control'>
+                <mat-form-field style="width:15em;">
+                  <mat-select placeholder="Select Category" [(ngModel)]="catKeyForAdd" (change)="onCatForAddChanged(catKeyForAdd)" name="termKeyRemove">
+                    <mat-option *ngFor="let term of categories" [value]="term.key">
+                      {{term.key|uppercase}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="control">
+                <mat-form-field>
+                  <input matInput [readonly]='!catKeyForAdd' placeholder="Terminology Key" [(ngModel)]="newTermKey" autocomplete="off">
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="panel-new-value">
+              <div class="label-value">Terminology Value:</div>
+              <mat-form-field class='new-value'>
+                <textarea matInput name="newTermValue" [readonly]='!catKeyForAdd' [(ngModel)]='newTermValue' matTextareaAutosize matAutosizeMaxRows="5"></textarea>
+              </mat-form-field>
+              <!-- <val-msg [message]='__formConfig.assessmentName.message'></val-msg> -->
+            </div>
+          </div>
+          <div class='card-actions'>
+            <button mat-raised-button color="accent" [disabled]='disableAdd' (click)='addTerm()'>Add</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class='card-header'>
+            <div class='card-title'>Remove Terminology</div>
+            <div>
+              <mat-slide-toggle color='primary' [(ngModel)]='allowRemove'>Enable Remove</mat-slide-toggle>
+            </div>
+          </div>
+          <div class='card-content'>
+            <div class="client-edit">
+              <div class='control'>
+                <mat-form-field style="width:15em;">
+                  <mat-select placeholder="Select Category" [(ngModel)]="catKeyForRemove" (change)="onCatChanged(catKeyForRemove)" name="termKeyRemove">
+                    <mat-option *ngFor="let term of categories" [value]="term.key">
+                      {{term.key|uppercase}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class='control'>
+                <mat-form-field style="width:15em;">
+                  <mat-select placeholder="Terminology to Remove" [(ngModel)]="termKeyRemove" (change)="onTermChanged(termKeyRemove)" name="termKeyRemove">
+                    <mat-option *ngFor="let term of termsForRemove" [value]="term.key">
+                      {{term.key|uppercase}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="panel-value" *ngIf='termKeyRemove' [@slideUpDownAnimation]>
+              <div class="label-value">Terminology Value:</div>
+              <div class="content-value">{{termValueForRemove}}</div>
+            </div>
+          </div>
+          <div class='card-actions'>
+            <button mat-raised-button color="accent" [disabled]='disableRemove' (click)='removeterm()'>Remove</button>
+          </div>
+        </div>
+
+      </widget-edit>
+    </div>
+  </div>
+</div>

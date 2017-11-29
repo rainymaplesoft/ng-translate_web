@@ -1,0 +1,26 @@
+.card {
+  margin: 1em 2em;
+  box-shadow: 2px 2px 5px #888888;
+  padding: 2em;
+  .card-header {
+    margin-bottom: 1em;
+    .card-title {
+      font-size: 1.2em;
+    }
+  }
+  .card-content {
+    padding: 0.5em;
+  }
+  .card-actions {
+    padding: 0.5em;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .client-edit {
+    display: flex;
+  }
+}
+
+.control {
+  margin-right: 2em;
+}

@@ -1,0 +1,15 @@
+  .master {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    .root-outlet {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+  }
+
+  .header-master {
+    height: 40px;
+    background-color: steelblue;
+  }

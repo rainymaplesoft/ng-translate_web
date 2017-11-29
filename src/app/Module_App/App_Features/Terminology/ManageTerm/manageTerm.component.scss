@@ -1,0 +1,61 @@
+.download {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2em;
+  padding: 1em 2em 0 2em;
+}
+
+.card {
+  margin: 1em 2em;
+  box-shadow: 2px 2px 5px #888888;
+  padding: 2em;
+  .card-header {
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-between;
+    .card-title {
+      font-size: 1.2em;
+    }
+  }
+  .card-content {
+    padding: 0.5em;
+  }
+  .card-actions {
+    padding: 0.5em;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .client-edit {
+    display: flex;
+  }
+}
+
+.control {
+  margin-right: 2em;
+}
+
+.panel-new-value {
+  margin-top: 1em;
+  .new-value {
+    width: 86%;
+  }
+  .label-value {
+    margin-bottom: 5px;
+    color: grey;
+  }
+}
+
+.panel-value {
+  .content-value {
+    height: 6em;
+    width: 87%;
+    border: #8BC34A solid 1px;
+    border-radius: 3px;
+    padding: 0.2em;
+    overflow-y: auto;
+  }
+  .label-value {
+    margin-bottom: 5px;
+    color: grey;
+  }
+}

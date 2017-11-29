@@ -1,0 +1,25 @@
+<div class="main">
+  <div class="header">
+    <div class="header-image">
+      <img src='../../../assets/img/globe_back_lg.jpg'>
+      <div class="greeting">
+        <div class="title_1">App Translation</div>
+        <div class="title_2">Application Terminologies Management</div>
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <div class="features">
+      <div *ngFor="let feature of features">
+        <app-feature [icon_name]='feature.icon_name' [title]='feature.title' [route]='feature.route' [description]='feature.description'></app-feature>
+      </div>
+    </div>
+  </div>
+  <div class="foot">
+    <div class="techs">
+      <div class="tech" *ngFor="let tech of techs">
+        <img [src]="tech.src" alt="tech">
+      </div>
+    </div>
+  </div>
+</div>

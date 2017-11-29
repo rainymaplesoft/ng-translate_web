@@ -1,0 +1,23 @@
+.terms_edit{
+    padding: 0 1em 1em 1em;
+    .edit_control{
+        display: flex;
+        padding-left: 1em;
+        padding-right: 1em;
+        background-color: aliceblue;
+        .label{
+            display: flex;
+            align-items: center;
+            min-width: 20em;
+            justify-content: flex-start;
+            padding-right: 1em;
+            padding-left: 02em;
+        }
+        .text{
+            flex:1;
+            mat-form-field{
+                width:96%;
+            }
+        }
+    }
+}

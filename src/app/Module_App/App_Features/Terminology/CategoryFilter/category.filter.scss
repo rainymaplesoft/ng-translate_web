@@ -1,0 +1,32 @@
+.main-section{
+    &.mobile{
+        padding: 0;
+        .section{
+            padding: 0;
+        }
+    }
+}
+mat-select {
+    max-width: 20em;
+    min-width: 6em;
+}
+
+mat-form-field{
+    width:100%;
+}
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.8em;
+    .select_container {
+        display: block;
+        position: relative;
+        padding: 2px;
+        margin: 2px 0;
+        vertical-align: middle;
+        margin-right: 1em;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
