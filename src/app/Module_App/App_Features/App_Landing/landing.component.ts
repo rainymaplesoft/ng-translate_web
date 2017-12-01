@@ -9,6 +9,8 @@ import { RouteName } from '../../App_Common/routeName';
 
 export class LandingComponent implements OnInit {
 
+    title1 = 'App Translation';
+
     features = [
         {
             icon_name: 'supervisor_account',

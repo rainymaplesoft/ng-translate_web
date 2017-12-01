@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
 // import * as firebase from 'firebase/app'; // typings only, should be in firebase service
 import 'firebase/storage'; // global firebase storage javascript
@@ -28,4 +28,14 @@ const fireConfig = {
     declarations: [],
     providers: [AngularFireService, FireAuthService, FirebaseAuthGuard],
 })
-export class FirebaseModule { }
+export class FirebaseModule {
+
+    static forRoot(): ModuleWithProviders {
+        return {
+            ngModule: FirebaseModule,
+            providers: [
+                AngularFireService, FireAuthService, FirebaseAuthGuard
+            ]
+        };
+    }
+}

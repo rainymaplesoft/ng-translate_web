@@ -1,0 +1,25 @@
+html {
+  font-family: Roboto, Helvetica Neue, sans-serif;
+  overflow-y: hidden!important;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.master {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .root-outlet {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+}
+
+.header-master {
+  height: 40px;
+  background-color: steelblue;
+}

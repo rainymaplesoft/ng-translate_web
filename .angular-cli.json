@@ -19,7 +19,7 @@
     "testTsconfig": "tsconfig.spec.json",
     "prefix": "app",
     "styles": [
-      "styles.css",
+      "./app/app.common.scss",
       "./assets/third-party/toastr.min.css",
       "./assets/third-party/snazzy-info-window.scss",
       "./assets/iconfont/material-icons.css",

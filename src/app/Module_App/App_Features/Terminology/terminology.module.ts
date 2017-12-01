@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+// import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { CommonModule } from '@angular/common';
 import { AppCommonModule, AuthenticateGuard, SysAdminAuthenticateGuard, RouteName } from '../../App_Common';
 
-import { CoreModule, NgTranslateModule, FirebaseModule } from '../../../Module_Core';
+import { CoreCommonModule, FirebaseModule } from '../../../Module_Core';
 
 
 import {
@@ -28,8 +28,10 @@ const routes: Routes = [
 
 @NgModule({
     imports: [
-        CommonModule, NgTranslateModule, FormsModule, ReactiveFormsModule,
-        CoreModule, AppCommonModule, FirebaseModule,
+        // system modules
+        // CommonModule, FormsModule, ReactiveFormsModule,
+        CoreCommonModule,
+        AppCommonModule, FirebaseModule,
         RouterModule.forChild(routes)
     ],
     exports: [],

@@ -1,11 +1,16 @@
 import { Component } from '@angular/core';
 
-// import { MatIconRegistry } from '@angular/material';
-
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `
+    <div class='master'>
+      <div class="header-master"></div>
+      <div class="root-outlet">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  `,
+  styles: []
 })
 export class AppComponent {
   title = 'app';
